@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 	respond_to :html, :xml, :json
 	def create
-		puts "CREATED"
+
 		user = User.create(name: params[:name], email: params[:email], password: params[:password], games_played: 0, games_won: 0, score: 0)
 
 		redirect_to'/'
