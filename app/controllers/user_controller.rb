@@ -4,7 +4,7 @@ class UserController < ApplicationController
 		puts "CREATED"
 		user = User.create(name: params[:name], email: params[:email], password: params[:password], games_played: 0, games_won: 0, score: 0)
 
-		redirect_to '/'
+		redirect_to'/'
 	end
 
 	def show
