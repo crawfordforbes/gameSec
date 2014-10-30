@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141025170609) do
 
   create_table "games", force: true do |t|
     t.boolean  "in_progress"
-    t.integer  "name"
+    t.string   "name"
     t.integer  "max_score"
     t.text     "rolls"
     t.integer  "group_id"

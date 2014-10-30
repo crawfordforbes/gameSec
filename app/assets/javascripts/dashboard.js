@@ -70,10 +70,11 @@ function newGroup(){
 	var button = document.createElement("button")
 
 	$(button).attr("id", "newGroupButton")
-	button.innerText = "Create a group"
+	button.innerText = "Create a new group"
 
 	div.appendChild(button)
 	$('#newGroupSelect').on('submit', function(e){
+		$("#newGroupButton").addClass("hide")
 		e.preventDefault();
 
 		addInput()
@@ -83,7 +84,7 @@ function newGroup(){
 function addInput() {
 
 	var name = document.createElement("input")
-	$(name).attr({"name": "name", "placeholder": "Group name"})
+	$(name).attr({"id":"groupName", "name": "name", "placeholder": "Group name"})
 	var form = $('#newMemberList')[0].children[0]
 	$(form).append(name)
 
@@ -97,7 +98,7 @@ function addInput() {
 	}
 	var button = document.createElement("button")
 	$(button).attr({"id": "newGroupSubmitButton", "class": "newGroup"})
-	button.innerText = "Create a group"
+	button.innerText = "Make this group"
 	$(form).append(button)
 	$('#newGroupSubmitButton').on('submit', function(e){
 		$.ajax({
@@ -180,7 +181,7 @@ function scoreboard() {
 			for(i=0; i<data.length; i++){
 				var max = $("#session")[0].innerText.split('/')[2]
 				if (data[i].score >= max) {
-					
+					$("#game").addClass("border")
 					$("#game")[0].innerHTML = "<h1>" + data[i].name + " wins!</h1>"
 					var div = $( "#endgame")
 					var form = div.children()[0]

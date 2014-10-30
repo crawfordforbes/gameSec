@@ -1,6 +1,6 @@
 <% if @user == nil %>
-
-<h1>Welcome to Game Secretary</h2>
+<div class="border">
+  <h1>Welcome to Game Secretary</h1>
   <h3>Log in here:</h3>
   <% if @error %>
   <p style='color: red;'>Incorrect email/password</p>
@@ -26,17 +26,24 @@
   <%= text_field_tag(:password) %>
   <%= submit_tag("Sign up") %>
   <% end %>
+</div>
+<% else %>
 
-  <% else %>
-
-  <!-- IF USER == NIL OVER -->
-
+<!-- IF USER == NIL OVER -->
+<div class="border">
   <div class="dashboard">
-    <p>welcome <%= @user.name %>. please select a group or start a game! </p>
+    <h2>Welcome <%= @user.name %>! Please select a group and start a game. </h2>
     <div id="GroupDropDown">
       <%= form_tag("/game", method: "POST") do %>
       <% end %>
     </div>
+    <div id="newGame" class="hide">
+      <%= form_tag("/game" + session[:game_id].to_s, method: "POST") do %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  <div class="border">
     <div id="newGroup">
       <%= form_tag("/group", method: "POST") do %>
       <% end %>
@@ -44,33 +51,32 @@
     <div id="newMemberList">
      <%= form_tag("/group", method: "POST") do %>
 
-    <% end %>
-  </div>
-  <div id="newGame" class="hide">
-    <%= form_tag("/game" + session[:game_id].to_s, method: "POST") do %>
-    <% end %>
-  </div>
-    <h3 id="showEditUser">Click here to make changes to your account</h3>
-    <div id="editUser" class="hide">
-      <%= form_tag("/user", method: "PUT") do %>
-      <%= hidden_field(:user_id, @user.id) %>
-      <%= label_tag(:name, "Name:") %>
-      <%= text_field_tag(:name) %>
-      <%= label_tag(:email, "Email:") %>
-      <%= text_field_tag(:email) %>
-      <%= label_tag(:password, "Password:") %>
-      <%= text_field_tag(:password) %>
-      <%= label_tag(:url, "Youtube video to play on victory:") %>
-      <%= text_field_tag(:url) %>
-      <%= submit_tag("Edit me!") %>
-      <% end %>
-    </div>
-  </div>
+     <% end %>
+   </div>
+ </div>
 
+<div class="border">
+ <h3 id="showEditUser">Click here to make changes to your account</h3>
+ <div id="editUser" class="hide">
+  <%= form_tag("/user", method: "PUT") do %>
+  <%= hidden_field(:user_id, @user.id) %>
+  <%= label_tag(:name, "Name:") %>
+  <%= text_field_tag(:name) %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "Password:") %>
+  <%= text_field_tag(:password) %>
+  <%= label_tag(:url, "Youtube video to play on victory:") %>
+  <%= text_field_tag(:url) %>
+  <%= submit_tag("Edit me!") %>
+  <% end %>
+</div>
+</div>
+</div>
 
-  <!-- if session[:group_id] == nil OVER -->
+<!-- if session[:group_id] == nil OVER -->
 
-  <div class="groupEdit hide">
+<!--   <div class="groupEdit hide">
     <h2>Please confirm players</h2>
     <ul id="members">
 
@@ -86,7 +92,7 @@
     <%= text_field_tag(:password) %>
     <%= submit_tag("Sign up") %>
     <% end %>
-  </div>
+  </div> -->
 
   <% end %>
 

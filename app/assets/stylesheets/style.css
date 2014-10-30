@@ -1,3 +1,47 @@
+body {
+	padding: 20px;
+	background-color: #72B1A4 !important;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 24px;
+}
+
+#game {
+	text-align: center;
+}
+
 .hide {
 	display: none;
+}
+
+.border {
+	width: 700px;
+	text-align: center;
+	padding: 10px;
+	background-color: #539FA2;
+	border: solid 5px #D4E2B6;
+	margin: 30px auto;
+	border-radius: 10px;	
+}
+
+#GroupDropDown select {
+	margin: 5px;
+}
+
+#newGame input {
+	margin: 10px;
+}
+
+#newMemberList input {
+	margin: 5px;
+}
+
+#groupName {
+	display: block;
+	margin: 0 auto !important;
 }

@@ -13,6 +13,7 @@ class GameController < ApplicationController
 		game = Game.create(group_id: params[:group_id].to_i, in_progress: false, name: params[:name], max_score: params[:max_score])		
 		puts("Game created")
 		puts game.id
+		session[:game_name] = game.name
 		session[:game_id] = game.id
 		session[:max_score] = game.max_score
 
