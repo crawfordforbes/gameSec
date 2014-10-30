@@ -1,32 +1,14 @@
-== README
+== GAMESEC
+**The ULTIMATE(ish) game secretary**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Can't remember what your score is, and want to update it in real time?
 
-Things you may want to cover:
+Have trouble with the fine motor skills required to roll dice?
 
-* Ruby version
+~~Find yourself forgetting whose turn it is when playing boardgames with your friends?~~
 
-* System dependencies
+Then GameSec is for you!
 
-* Configuration
+Created by, written by, executively produced by and starring Crawford Forbes, GameSec uses the latest in Rails, Jquery, and bootstrap technologies.  GameSec - it keeps the party going!
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-Spotify Client ID 1d2b9d8c939c482a812e97fae8cca573
-
-Spotify Client Secret dba4a4653c94461e871bf441c60a87fd
+[Stop by and say trello!](https://trello.com/b/j4L98lq3/gamesec-future)
