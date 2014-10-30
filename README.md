@@ -1,4 +1,5 @@
-*** GAMESEC ***
+# GAMESEC #
+
 **The ULTIMATE(ish) game secretary**
 
 Can't remember what your score is, and want to update it in real time?
